@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -20,6 +21,27 @@
     <!-- Squad theme CSS -->
     <link href="css/style.css" rel="stylesheet">
 	<link href="color/default.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+		<link href='reset.css' rel='stylesheet' type='text/css'>
+		<link href='index_styles.css' rel='stylesheet' type='text/css'>
+		<!--[if lt IE 9]>
+			<link href='IEstyleslessthan9.css' rel='stylesheet' type='text/css'>
+		<![endif]-->
+		<!--[if gte IE 9]>
+			<link href='IEstylesgeq9.css' rel='stylesheet' type='text/css'>
+		<![endif]-->
+	<script src="https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.en.-MEibZBkA0g.O/m=auth/exm=plusone/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AGLTcCN5wAq8ObXDmKVRVqq22e9MdJrBvg/t=zcms/cb=gapi.loaded_1" async=""></script>
+	<script src="https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.en.-MEibZBkA0g.O/m=plusone/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AGLTcCN5wAq8ObXDmKVRVqq22e9MdJrBvg/t=zcms/cb=gapi.loaded_0" async=""></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="jquery.placeholder.js"></script>
+	<script type="text/javascript" src="index_scripts.js"></script>
+	<script type="text/javascript" async="" src="https://apis.google.com/js/plusone.js" gapi_processed="true"></script>
+
+	
+
+
 
 </head>
 
@@ -78,7 +100,7 @@
 		
 					<div class="section-heading">
 					<h2>What does your perfect day look like?</h2>
-					<p>Lorem ipsum dolor sit amet, no nisl mentitum recusabo per, vim at blandit qualisque dissentiunt. Diam efficiantur conclusionemque ut has</p>
+					
 					</div>
 			
 				</div>
@@ -87,13 +109,82 @@
 		</div>
 		<div class="container">
         <div class="row">
+        	
+        <div id="mask"></div>
+        <div id="fb-root"></div>
+		<script>
+		  window.fbAsyncInit = function() {
+		    FB.init({
+		      appId      : '776607335720143',
+		      xfbml      : true,
+		      version    : 'v2.2'
+		    });
+		  };
+		  (function(d, s, id){
+		     var js, fjs = d.getElementsByTagName(s)[0];
+		     if (d.getElementById(id)) {return;}
+		     js = d.createElement(s); js.id = id;
+		     js.src = "//connect.facebook.net/en_US/sdk.js";
+		     fjs.parentNode.insertBefore(js, fjs);
+		   }(document, 'script', 'facebook-jssdk'));
+		</script>
+		<noscript><h3>This website requires JavaScript.</h3></noscript>
+		<h3>featuring restaurants and reviews from <a href="http://www.yelp.com/" target="_blank"><img src="http://s3-media4.ak.yelpcdn.com/assets/2/www/img/7e704c57a423/developers/yelp_logo_75x38.png" width="75" height="38" id="yelpsite" alt="Yelp"></a></h3>
+
+
+
+		<div id="fullbody">
+			<div id= "body_left">
+				<h2>Where?</h2>
+				<div id="body_bottom">
+					<div id="locBoxDirections">To search for any restaurant nearby, press &lt;enter&gt; after you type in your location below:</div>
+					<br>
+					<form method="post" name="search1" id="search" onSubmit="return submitform(-1);">
+  					<input name="q" type="text" size="40" id="locationInput" placeholder="zip, address, etc." class="form-group"/>
+  					</form>
+  					<div id="noLocError" class="btn btn-skin scroll">First enter location above</div>
+  					<br>
+  					<div id="searchradiuscontainer">
+  						<h3>Max distance: <span id="radius-display"> 10 miles (driving) </span></h3>
+    					<div id="radius-slider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div class="ui-slider-range ui-widget-header ui-slider-range-min" style="width: 66.6667%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 66.6667%;"></a></div>
+  					</div>
+				</div>
+			</div>
+			<div id="body_right">
+			<h2>What?</h2>
+				<div id="body_bottom">
+					<form method="post" action="restaurantselect.html" name="search3" id="search" onSubmit="return submitform(3);">
+					<a id="cheap" onClick="return submitform(1);" class="btn btn-skin scroll">cheap!</a>
+					<br><br>
+					<a id="expensive" onClick="return submitform(2);" class="btn btn-skin scroll">expensive!</a>
+					<br><br>
+					<h3>or..</h3>
+					<br>
+					<input name="selfentry" type="text" id="selfentry" size="60" placeholder="Name of the restaurant!" class="form-input"/>
+					<a onClick="return submitform(3);" id="goButton" class="btn btn-skin scroll">go!</a>
+					</form>
+					<div id="noSelfEntryError"></div>
+				</div>
+			</div>
+		</div>
+		<!-- SVG syntax to help IE render gradient and border-radius buttons -->
+		<!--[if IE 9]>
+		<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1 1" preserveAspectRatio="none">
+		preserveAspectRatio="none">
+		<linearGradient id="g954" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="0%" y2="100%">
+		<stop stop-color="#FFFFFF" offset="0"/><stop stop-color="#BBBBBB" offset="1"/>
+		</linearGradient>
+		<linearGradient id="g316" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="0%" y2="100%">
+		<stop stop-color="#FFFFFF" offset="0"/><stop stop-color="#999999" offset="1"/>
+		</linearGradient>
+		<linearGradient id="g317" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="0%" y2="100%">
+		<stop stop-color="#BBBBBB" offset="0"/><stop stop-color="#FFFFFF" offset="1"/>
+		</linearGradient>
+		</svg>
+		<![endif]-->
 <!--             <div class="col-sm-3 col-md-3"> -->
 
 
-			<h1>Randomizer application goes here</h1>
-			<h1>Randomizer application goes here</h1>
-			<h1>Randomizer application goes here</h1>
-			<h1>Randomizer application goes here</h1>
                 <!-- <div class="service-box">
 					<div class="service-icon">
 						<i class="fa fa-code fa-3x"></i>
@@ -143,9 +234,24 @@
 					</div>
                 </div> -->
 			
-            </div>
+          </div>
         </div>		
 		</div>
+		<iframe name="oauth2relay721385588" id="oauth2relay721385588" src="https://accounts.google.com/o/oauth2/postmessageRelay?parent=http%3A%2F%2Fwww.restaurantgenerator.com#rpctoken=362434240&amp;forcesecure=1" tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;">
+		#document
+		<html>
+		<head>
+			<title></title>
+			<meta http-equiv="content-type" content="text/html; charset=utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<script type="text/javascript" src="https://apis.google.com/js/api.js" gapi_processed="true"></script>
+			<script type="text/javascript" src="https://oauth.googleusercontent.com/gadgets/js/core:rpc:shindig.random:shindig.sha1.js?c=2"></script>
+			<script src="https://ssl.gstatic.com/accounts/o/3584451713-postmessagerelay.js"></script>
+		</head>
+		<body></body>
+		</html>
+	</iframe>
 	</section>
 	<!-- /Section: services -->
 	
