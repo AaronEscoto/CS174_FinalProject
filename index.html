@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-	<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -21,27 +20,6 @@
     <!-- Squad theme CSS -->
     <link href="css/style.css" rel="stylesheet">
 	<link href="color/default.css" rel="stylesheet">
-	<link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-		<link href='reset.css' rel='stylesheet' type='text/css'>
-		<link href='index_styles.css' rel='stylesheet' type='text/css'>
-		<!--[if lt IE 9]>
-			<link href='IEstyleslessthan9.css' rel='stylesheet' type='text/css'>
-		<![endif]-->
-		<!--[if gte IE 9]>
-			<link href='IEstylesgeq9.css' rel='stylesheet' type='text/css'>
-		<![endif]-->
-	<script src="https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.en.-MEibZBkA0g.O/m=auth/exm=plusone/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AGLTcCN5wAq8ObXDmKVRVqq22e9MdJrBvg/t=zcms/cb=gapi.loaded_1" async=""></script>
-	<script src="https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.en.-MEibZBkA0g.O/m=plusone/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AGLTcCN5wAq8ObXDmKVRVqq22e9MdJrBvg/t=zcms/cb=gapi.loaded_0" async=""></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="jquery.placeholder.js"></script>
-	<script type="text/javascript" src="index_scripts.js"></script>
-	<script type="text/javascript" async="" src="https://apis.google.com/js/plusone.js" gapi_processed="true"></script>
-
-	
-
-
 
 </head>
 
@@ -83,8 +61,10 @@
 	<!-- Section: intro -->
     <section id="intro" class="intro">
 		<div class="slogan">
+			
 			<h1>Hi there!</h1>
 			<p>Welcome to your perfect day!</p>
+			<a href="#service" class="btn btn-skin scroll">Log In</a>
 			<a href="#service" class="btn btn-skin scroll">Try it out</a>
 		</div>	
     </section>
@@ -92,6 +72,89 @@
 
 	<!-- Section: services -->
     <section id="service" class="home-section text-center">
+		
+		<div class="heading-about marginbot-50">
+			<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+		
+					<div class="section-heading">
+					<h2>Generator your perfect date</h2>
+					<p>Lorem ipsum dolor sit amet, no nisl mentitum recusabo per, vim at blandit qualisque dissentiunt. Diam efficiantur conclusionemque ut has</p>
+					</div>
+			
+				</div>
+			</div>
+			</div>
+		</div>
+		<div class="container">
+        <div class="row">
+<!--             <div class="col-sm-6 col-md-6"> -->
+
+                <div class="service-box">
+					<div class="service-icon">
+						<i class="fa fa-coffee fa-3x"></i>
+					</div>
+					<div class="service-desc">
+						<h5>What are you in the mood for?</h5>
+						<p>Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.</p>
+						<button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-skin center-block">Generate</button>
+					</div>
+                </div>
+
+            </div>
+        </div>		
+		</div>
+	</section>
+	<!-- /Section: services -->
+
+	<!-- line modal -->
+<div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+			<h3 class="modal-title" id="lineModalLabel">Perfect Date</h3>
+		</div>
+		<div class="modal-body">
+			
+            <!-- content goes here -->
+			<form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Search By Resturant</label>
+                <input type="email" class="form-control" id="inputResturant" placeholder="Resturant keyword">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Search By Location</label>
+                <input type="password" class="form-control" id="inputEvent" placeholder="Event keyword">
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Check me out
+                </label>
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+
+		</div>
+		<div class="modal-footer">
+			<div class="btn-group btn-group-justified" role="group" aria-label="group button">
+				<div class="btn-group" role="group">
+					<button type="button" class="btn btn-default" data-dismiss="modal"  role="button">Close</button>
+				</div>
+				<div class="btn-group btn-delete hidden" role="group">
+					<button type="button" id="delImage" class="btn btn-default btn-hover-red" data-dismiss="modal"  role="button">Delete</button>
+				</div>
+				<div class="btn-group" role="group">
+					<button type="button" id="saveImage" class="btn btn-default btn-hover-green" data-action="save" role="button">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+  </div>
+</div>
+
+<!--     <section id="service" class="home-section text-center">
 		
 		<div class="heading-about marginbot-50">
 			<div class="container">
@@ -167,72 +230,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- SVG syntax to help IE render gradient and border-radius buttons -->
-		<!--[if IE 9]>
-		<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1 1" preserveAspectRatio="none">
-		preserveAspectRatio="none">
-		<linearGradient id="g954" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="0%" y2="100%">
-		<stop stop-color="#FFFFFF" offset="0"/><stop stop-color="#BBBBBB" offset="1"/>
-		</linearGradient>
-		<linearGradient id="g316" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="0%" y2="100%">
-		<stop stop-color="#FFFFFF" offset="0"/><stop stop-color="#999999" offset="1"/>
-		</linearGradient>
-		<linearGradient id="g317" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="0%" y2="100%">
-		<stop stop-color="#BBBBBB" offset="0"/><stop stop-color="#FFFFFF" offset="1"/>
-		</linearGradient>
-		</svg>
-		<![endif]-->
-<!--             <div class="col-sm-3 col-md-3"> -->
 
-
-                <!-- <div class="service-box">
-					<div class="service-icon">
-						<i class="fa fa-code fa-3x"></i>
-					</div>
-					<div class="service-desc">
-						<h5>Print</h5>
-						<p>Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.</p>
-					</div>
-                </div>
-	
-            </div>
-			<div class="col-sm-3 col-md-3">
-	
-                <div class="service-box">
-					<div class="service-icon">
-						<i class="fa fa-suitcase fa-3x"></i>
-					</div>
-					<div class="service-desc">
-						<h5>Web Design</h5>
-						<p>Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.</p>
-					</div>
-                </div>
-
-            </div>
-			<div class="col-sm-3 col-md-3">
-
-                <div class="service-box">
-					<div class="service-icon">
-						<i class="fa fa-cog fa-3x"></i>
-					</div>
-					<div class="service-desc">
-						<h5>Photography</h5>
-						<p>Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.</p>
-					</div>
-                </div>
-			
-            </div>
-			<div class="col-sm-3 col-md-3">
-	
-                <div class="service-box">
-					<div class="service-icon">
-						<i class="fa fa-rocket fa-3x"></i>
-					</div>
-					<div class="service-desc">
-						<h5>Cloud System</h5>
-						<p>Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.</p>
-					</div>
-                </div> -->
 			
           </div>
         </div>		
@@ -251,9 +249,7 @@
 		</head>
 		<body></body>
 		</html>
-	</iframe>
-	</section>
-	<!-- /Section: services -->
+	</iframe> -->
 	
 		<!-- Section: about -->
     <section id="about" class="home-section text-center bg-gray">
@@ -323,75 +319,6 @@
 	</section>
 	<!-- /Section: about -->
 		
-	<!-- Section: works -->
-<!--     <section id="works" class="home-section text-center bg-gray">
-		<div class="heading-works marginbot-50">
-			<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2">
-		
-					<div class="section-heading">
-					<h2>Recent Works</h2>
-					<p>Lorem ipsum dolor sit amet, no nisl mentitum recusabo per, vim at blandit qualisque dissentiunt. Diam efficiantur conclusionemque ut has</p>
-					</div>
-		
-				</div>
-			</div>
-			</div>
-		</div>
-		<div class="container">
-
-            <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-12" >
-
-                    <div class="row gallery-item">
-                        <div class="col-md-3">
-							<a href="img/works/1.jpg" title="This is an image title" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
-								<img src="img/works/1.jpg" class="img-responsive" alt="img">
-							</a>
-						</div>
-						<div class="col-md-3">
-							<a href="img/works/2.jpg" title="This is an image title" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
-								<img src="img/works/2.jpg" class="img-responsive" alt="img">
-							</a>
-						</div>
-						<div class="col-md-3">
-							<a href="img/works/3.jpg" title="This is an image title" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
-								<img src="img/works/3.jpg" class="img-responsive" alt="img">
-							</a>
-						</div>
-						<div class="col-md-3">
-							<a href="img/works/4.jpg" title="This is an image title" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
-								<img src="img/works/4.jpg" class="img-responsive" alt="img">
-							</a>
-						</div>
-						<div class="col-md-3">
-							<a href="img/works/5.jpg" title="This is an image title" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
-								<img src="img/works/5.jpg" class="img-responsive" alt="img">
-							</a>
-						</div>
-						<div class="col-md-3">
-							<a href="img/works/6.jpg" title="This is an image title" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
-								<img src="img/works/6.jpg" class="img-responsive" alt="img">
-							</a>
-						</div>
-						<div class="col-md-3">
-							<a href="img/works/7.jpg" title="This is an image title" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
-								<img src="img/works/7.jpg" class="img-responsive" alt="img">
-							</a>
-						</div>
-						<div class="col-md-3">
-							<a href="img/works/8.jpg" title="This is an image title" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
-								<img src="img/works/8.jpg" class="img-responsive" alt="img">
-							</a>
-						</div>
-					</div>
-	
-                </div>
-            </div>	
-		</div>
-	</section> -->
-	<!-- /Section: works -->
 
 	<!-- Section: contact -->
     <section id="contact" class="home-section text-center">
@@ -510,6 +437,7 @@
 	<script src="js/stellar.js"></script>
     <!-- Custom Theme JavaScript -->
     <script src="js/custom.js"></script>
+    <script src="js/customVideo.js"></script>
 
 </body>
 
